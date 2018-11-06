@@ -15,24 +15,24 @@
   </tr>
   <tr>
     <td>Cases</td>
-    <td><input type="number"></td>
-    <td><input type="number"></td> 
-    <td><input type="number"></td>
-    <td>freeze</td>
+    <td><input type="number" id="case_AA"></td>
+    <td><input type="number" id="case_Aa"></td> 
+    <td><input type="number" id="case_aa"></td>
+    <td><input id="total_case" disabled></td>
   </tr>
   <tr>
     <td>Controls</td>
-    <td><input type="number"></td>
-    <td><input type="number"></td> 
-    <td><input type="number"></td>
-    <td>freeze</td>
+    <td><input type="number" id="control_AA"></td>
+    <td><input type="number" id="control_Aa"></td> 
+    <td><input type="number" id="control_aa"></td>
+    <td><input id="total_control" disabled></td>
   </tr>
   <tr>
     <td>Total</td>
-    <td>freeze</td>
-    <td>freeze</td>
-    <td>freeze</td>
-    <td id='testid'>freeze</td>
+    <td><input id="total_AA" disabled></td>
+    <td><input id="total_Aa" disabled></td>
+    <td><input id="total_aa" disabled></td>
+    <td><input id="total" disabled></td>
   </tr>
 </table>
 
@@ -46,10 +46,9 @@
 <script>
 
 function Calculate(){
-	var x = document.getElementById("testTable").rows[1].cells[1];
-    var y = document.getElementById("testid")
-	document.body.appendChild(x);  
-    y.innerHTML="new freeze"; 
+    var para = document.createElement("p"); 
+    para.innerText = "p-value: ";
+    document.body.appendChild(para);
 }
 
 
