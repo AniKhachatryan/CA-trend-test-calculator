@@ -46,11 +46,6 @@
 </form> -->
 
 <script>
-var chi;
-define(function (require) {
-    var namedModule = require('chi-squared');
-	console.log(namedModule);
-});
 function Calculate(){
 	var cases_AA = parseFloat(document.getElementById("case_AA").value);
     var cases_Aa = parseFloat(document.getElementById("case_Aa").value);
@@ -78,10 +73,6 @@ function Calculate(){
     var p_hat = (2*total_AA+total_Aa)/(2*total);
     var Z = 2 * Math.sqrt(total_cases*total_controls) * (p_cases-p_controls) / Math.sqrt(4*total_AA + total_Aa - 4*total*p_hat*p_hat);    
     var Z_Squared = Math.pow(Z,2);
-    
-
-	var pval = 1 - chi.cdf(Z_Squared, 1);
-
 	
     var para = document.createElement("p"); 
     para.innerText = "Z squared: " + Math.round(Z_Squared*10000)/10000;
