@@ -41,6 +41,9 @@
 <br><br>
 <button onclick="Calculate()">Calculate</button>
 
+<br><br>
+<div id="result"></div>
+
 
 <!-- <button type="input" form="frm-test" onclick="Calculate" value="Submit">Calculate</button>
 </form> -->
@@ -74,9 +77,8 @@ function Calculate(){
     var Z = 2 * Math.sqrt(total_cases*total_controls) * (p_cases-p_controls) / Math.sqrt(4*total_AA + total_Aa - 4*total*p_hat*p_hat);    
     var Z_Squared = Math.pow(Z,2);
 	
-    var para = document.createElement("p"); 
+    var para = document.getElementById("result"); 
     para.innerText = "Z squared: " + Math.round(Z_Squared*10000)/10000;
-    document.body.appendChild(para);
 }
 
 
