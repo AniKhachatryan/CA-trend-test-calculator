@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>CA trend test Calculator</h1>
+
+<!-- <form id="frm-test" onsubmit="Calculate()"> -->
+<table id="testTable" style="width:100%">
+  <tr>
+  	<th></th>
+    <th>AA</th>
+    <th>Aa</th> 
+    <th>aa</th>
+    <th>Total</th>
+  </tr>
+  <tr>
+    <td>Cases</td>
+    <td><input type="number"></td>
+    <td><input type="number"></td> 
+    <td><input type="number"></td>
+    <td>freeze</td>
+  </tr>
+  <tr>
+    <td>Controls</td>
+    <td><input type="number"></td>
+    <td><input type="number"></td> 
+    <td><input type="number"></td>
+    <td>freeze</td>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td>freeze</td>
+    <td>freeze</td>
+    <td>freeze</td>
+    <td id='testid'>freeze</td>
+  </tr>
+</table>
+
+<br><br>
+<button onclick="Calculate()">Calculate</button>
+
+
+<!-- <button type="input" form="frm-test" onclick="Calculate" value="Submit">Calculate</button>
+</form> -->
+
+<script>
+
+function Calculate(){
+	var x = document.getElementById("testTable").rows[1].cells[1];
+    var y = document.getElementById("testid")
+	document.body.appendChild(x);  
+    y.innerHTML="new freeze"; 
+}
+
+
+</script>
+
+</body>
+</html>
