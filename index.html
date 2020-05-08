@@ -47,6 +47,7 @@
 
 <div id="result"></div>
 <div id="result_chi"></div>
+<div id="info"></div>
 
 
 <!-- <button type="input" form="frm-test" onclick="Calculate" value="Submit">Calculate</button>
@@ -86,6 +87,8 @@ function Calculate(){
     para.innerText = "Z squared: " + Math.round(Z_Squared*10000)/10000;
     var result_chi = document.getElementById("result_chi");
     result_chi.innerText = "P-value: " + compute(Z_Squared, 1);
+    var info = document.getElementById("info");
+    info.innerText = "P-value calculated based on the &Chi <sup>2</sup> distribution with 1 degree of freedom";
 
 }
 
