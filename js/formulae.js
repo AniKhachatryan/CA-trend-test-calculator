@@ -66,6 +66,6 @@ function compute(x, df_val) {
     } else {
         Chisqcdf=Gammacdf(Z/2,DF/2)
     }
-    Chisqcdf=Math.round(Chisqcdf*100000)/100000;
-    return 1- Chisqcdf;
+    Chisqcdf = 1 - Math.round(Chisqcdf*100000)/100000;
+    return Chisqcdf;
 }
