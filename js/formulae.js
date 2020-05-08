@@ -58,14 +58,14 @@ function Gammacdf(x,a) {
     return GI
 }
 
-function compute(form) {
-    Z=eval(form.argument.value)
-    DF=eval(form.df.value)
+function compute(x, df_val) {
+    Z=eval(x)
+    DF=eval(df_val)
     if (DF<=0) {
         alert("Degrees of freedom must be positive")
     } else {
         Chisqcdf=Gammacdf(Z/2,DF/2)
     }
     Chisqcdf=Math.round(Chisqcdf*100000)/100000;
-    form.result.value = Chisqcdf;
+    return Chisqcdf;
 }
