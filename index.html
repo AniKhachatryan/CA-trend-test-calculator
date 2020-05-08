@@ -95,7 +95,7 @@
     var result_chi = document.getElementById("result_chi");
     result_chi.innerText = "P-value: " +  Math.round(compute(Z_Squared, 1)*10000)/10000;
     var info = document.getElementById("info");
-    info.innerText = "P-value calculated based on the &Chi <sup>2</sup> distribution with 1 degree of freedom";
+    info.innerHTML = "P-value calculated based on the &Chi;<sup>2</sup> distribution with 1 degree of freedom";
 
     }
 
