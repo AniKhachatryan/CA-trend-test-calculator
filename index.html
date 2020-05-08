@@ -49,10 +49,12 @@
     <br><br>
     <button type="button" class="btn btn-success" onclick="Calculate()">Calculate</button>
 
-    <br><br>
+<br><br>
 
-    <div id="result"></div>
-    <div id="result_chi"></div>
+<div id="result"></div>
+<div id="result_chi"></div>
+<div id="info"></div>
+
 
 </div>
 <!-- <button type="input" form="frm-test" onclick="Calculate" value="Submit">Calculate</button>
@@ -87,11 +89,14 @@
         var Z = 2 * Math.sqrt(total_cases * total_controls) * (p_cases - p_controls) / Math.sqrt(4 * total_AA + total_Aa - 4 * total * p_hat * p_hat);
         var Z_Squared = Math.pow(Z, 2);
 
+	
+    var para = document.getElementById("result"); 
+    para.innerText = "Z squared: " + Math.round(Z_Squared*10000)/10000;
+    var result_chi = document.getElementById("result_chi");
+    result_chi.innerText = "P-value: " +  Math.round(compute(Z_Squared, 1)*10000)/10000;
+    var info = document.getElementById("info");
+    info.innerText = "P-value calculated based on the &Chi <sup>2</sup> distribution with 1 degree of freedom";
 
-        var para = document.getElementById("result");
-        para.innerText = "Z squared: " + Math.round(Z_Squared * 10000) / 10000;
-        var result_chi = document.getElementById("result_chi");
-        result_chi.innerText = "P-value: " + compute(Z_Squared, 1);
     }
 
 
