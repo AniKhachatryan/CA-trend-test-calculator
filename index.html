@@ -5,14 +5,15 @@
 
 </head>
 <body>
-<h1>Cochran–Armitage trend test Calculator</h1>
+<h1>Cochran - Armitage trend test Calculator</h1>
 
 <!-- <form id="frm-test" onsubmit="Calculate()"> -->
-<table id="testTable" style="width:100%">
+<table id="testTable table" style="width:100%">
   <tr>
-  	<th></th>
+  	<thead></thead>
+    <th></th>
     <th>AA</th>
-    <th>Aa</th> 
+    <th>Aa</th>
     <th>aa</th>
     <th>Total</th>
   </tr>
@@ -40,7 +41,7 @@
 </table>
 
 <br><br>
-<button onclick="Calculate()">Calculate</button>
+<button type="button" class="btn btn-success" onclick="Calculate()">Calculate</button>
 
 <br><br>
 
@@ -84,7 +85,7 @@ function Calculate(){
     var para = document.getElementById("result"); 
     para.innerText = "Z squared: " + Math.round(Z_Squared*10000)/10000;
     var result_chi = document.getElementById("result_chi");
-    result_chi.innerText = "Chi value: " + compute(Z_Squared, 1);
+    result_chi.innerText = "P-value: " + compute(Z_Squared, 1);
 
 }
 
