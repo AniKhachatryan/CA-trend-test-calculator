@@ -1,114 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>C-A trend test Calculator</title>
+    <meta name="description" content="Free Bootstrap 4 Template by uicookies.com">
+    <meta name="keywords"
+          content="Free website templates, Free bootstrap themes, Free template, Free bootstrap, Free website template">
+
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600|Montserrat:200,300,400"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons/css/ionicons.min.css">
+    <!--    <link rel="stylesheet" href="assets/fonts/law-icons/font/flaticon.css">-->
+
+    <link rel="stylesheet" href="assets/fonts/fontawesome/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/slick-theme.css">
+
+    <link rel="stylesheet" href="assets/css/helpers.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/landing-2.css">
     <script src="js/formulae.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
 </head>
-<body>
+<body data-spy="scroll" data-target="#pb-navbar" data-offset="200">
+<section class="pb_cover_v3 overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 pb_slant-light"
+         id="section-home">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-10">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <h2>Cochran - Armitage trend test Calculator</h2>
+                    </div>
+                    <div class="card-body">
+                        <table class="table-responsive">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>AA</th>
+                                <th>Aa</th>
+                                <th>aa</th>
+                                <th>Total</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th>Cases</th>
+                                <td><input type="number" id="case_AA"></td>
+                                <td><input type="number" id="case_Aa"></td>
+                                <td><input type="number" id="case_aa"></td>
+                                <td><input id="total_case" disabled></td>
+                            </tr>
+                            <tr>
+                                <th>Controls</th>
+                                <td><input type="number" id="control_AA"></td>
+                                <td><input type="number" id="control_Aa"></td>
+                                <td><input type="number" id="control_aa"></td>
+                                <td><input id="total_control" disabled></td>
+                            </tr>
+                            <tr>
+                                <th>Total</th>
+                                <td><input id="total_AA" disabled></td>
+                                <td><input id="total_Aa" disabled></td>
+                                <td><input id="total_aa" disabled></td>
+                                <td><input id="total" disabled></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <button type="button" class="btn btn-success" onclick="Calculate()">Calculate</button>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <strong>
+                            <div id="result"></div>
+                            <div id="result_chi"></div>
+                        </strong>
+                            <div id="info"></div>
 
-<div class="container">
-    <h1>Cochran - Armitage trend test Calculator</h1>
-    <!-- <form id="frm-test" onsubmit="Calculate()"> -->
-    <table id="testTable table">
-        <thead>
-            <tr>
-                <th></th>
-                <th>AA</th>
-                <th>Aa</th>
-                <th>aa</th>
-                <th>Total</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th>Cases</th>
-                <td><input type="number" id="case_AA"></td>
-                <td><input type="number" id="case_Aa"></td>
-                <td><input type="number" id="case_aa"></td>
-                <td><input id="total_case" disabled></td>
-            </tr>
-            <tr>
-                <th>Controls</th>
-                <td><input type="number" id="control_AA"></td>
-                <td><input type="number" id="control_Aa"></td>
-                <td><input type="number" id="control_aa"></td>
-                <td><input id="total_control" disabled></td>
-            </tr>
-            <tr>
-                <th>Total</th>
-                <td><input id="total_AA" disabled></td>
-                <td><input id="total_Aa" disabled></td>
-                <td><input id="total_aa" disabled></td>
-                <td><input id="total" disabled></td>
-            </tr>
-        </tbody>
-    </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END section -->
+<footer class="pb_footer bg-light" role="contentinfo">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://www.facebook.com/ani.khachatryan.52" class="p-2"><i
+                            class="fa fa-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.linkedin.com/in/ani-khachatryann/" class="p-2"><i
+                            class="fa fa-linkedin"></i></a></li>
+                    <li class="list-inline-item"><a href="https://github.com/AniKhachatryan" class="p-2"><i
+                            class="fa fa-github"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
 
-    <br><br>
-    <button type="button" class="btn btn-success" onclick="Calculate()">Calculate</button>
-
-<br><br>
-
-<div id="result"></div>
-<div id="result_chi"></div>
-<div id="info"></div>
-
-
+<!-- loader -->
+<div id="pb_loader" class="show fullscreen">
+    <svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#1d82ff"/>
+    </svg>
 </div>
-<!-- <button type="input" form="frm-test" onclick="Calculate" value="Submit">Calculate</button>
-</form> -->
-
-<script>
-    function Calculate() {
-        var cases_AA = parseFloat(document.getElementById("case_AA").value);
-        var cases_Aa = parseFloat(document.getElementById("case_Aa").value);
-        var cases_aa = parseFloat(document.getElementById("case_aa").value);
-        var controls_AA = parseFloat(document.getElementById("control_AA").value);
-        var controls_Aa = parseFloat(document.getElementById("control_Aa").value);
-        var controls_aa = parseFloat(document.getElementById("control_aa").value);
-
-        var total_AA = cases_AA + controls_AA;
-        var total_Aa = cases_Aa + controls_Aa;
-        var total_aa = cases_aa + controls_aa;
-        var total_cases = cases_AA + cases_Aa + cases_aa;
-        var total_controls = controls_AA + controls_Aa + controls_aa;
-        var total = total_cases + total_controls;
-
-        document.getElementById("total_case").value = total_cases;
-        document.getElementById("total_control").value = total_controls;
-        document.getElementById("total_AA").value = total_AA;
-        document.getElementById("total_Aa").value = total_Aa;
-        document.getElementById("total_aa").value = total_aa;
-        document.getElementById("total").value = total;
-
-        var p_cases = (2 * cases_AA + cases_Aa) / (2 * total_cases);
-        var p_controls = (2 * controls_AA + controls_Aa) / (2 * total_controls);
-        var p_hat = (2 * total_AA + total_Aa) / (2 * total);
-        var Z = 2 * Math.sqrt(total_cases * total_controls) * (p_cases - p_controls) / Math.sqrt(4 * total_AA + total_Aa - 4 * total * p_hat * p_hat);
-        var Z_Squared = Math.pow(Z, 2);
-
-	
-    var para = document.getElementById("result"); 
-    para.innerText = "Z squared: " + Math.round(Z_Squared*10000)/10000;
-    var result_chi = document.getElementById("result_chi");
-    result_chi.innerText = "P-value: " +  Math.round(compute(Z_Squared, 1)*10000)/10000;
-    var info = document.getElementById("info");
-    info.innerHTML = "P-value calculated based on the &Chi;<sup>2</sup> distribution with 1 degree of freedom";
-
-    }
 
 
-</script>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+<script src="assets/js/jquery.min.js"></script>
+
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/slick.min.js"></script>
+<script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
+
+<script src="assets/js/jquery.waypoints.min.js"></script>
+<script src="assets/js/jquery.easing.1.3.js"></script>
+
+<script src="assets/js/main.js"></script>
+
 </body>
 </html>

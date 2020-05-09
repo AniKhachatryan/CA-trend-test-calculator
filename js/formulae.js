@@ -69,3 +69,41 @@ function compute(x, df_val) {
     Chisqcdf = 1 - Math.round(Chisqcdf*100000)/100000;
     return Chisqcdf;
 }
+
+function Calculate() {
+    var cases_AA = parseFloat(document.getElementById("case_AA").value);
+    var cases_Aa = parseFloat(document.getElementById("case_Aa").value);
+    var cases_aa = parseFloat(document.getElementById("case_aa").value);
+    var controls_AA = parseFloat(document.getElementById("control_AA").value);
+    var controls_Aa = parseFloat(document.getElementById("control_Aa").value);
+    var controls_aa = parseFloat(document.getElementById("control_aa").value);
+
+    var total_AA = cases_AA + controls_AA;
+    var total_Aa = cases_Aa + controls_Aa;
+    var total_aa = cases_aa + controls_aa;
+    var total_cases = cases_AA + cases_Aa + cases_aa;
+    var total_controls = controls_AA + controls_Aa + controls_aa;
+    var total = total_cases + total_controls;
+
+    document.getElementById("total_case").value = total_cases;
+    document.getElementById("total_control").value = total_controls;
+    document.getElementById("total_AA").value = total_AA;
+    document.getElementById("total_Aa").value = total_Aa;
+    document.getElementById("total_aa").value = total_aa;
+    document.getElementById("total").value = total;
+
+    var p_cases = (2 * cases_AA + cases_Aa) / (2 * total_cases);
+    var p_controls = (2 * controls_AA + controls_Aa) / (2 * total_controls);
+    var p_hat = (2 * total_AA + total_Aa) / (2 * total);
+    var Z = 2 * Math.sqrt(total_cases * total_controls) * (p_cases - p_controls) / Math.sqrt(4 * total_AA + total_Aa - 4 * total * p_hat * p_hat);
+    var Z_Squared = Math.pow(Z, 2);
+
+
+    var para = document.getElementById("result");
+    para.innerText = "Z squared: " + Math.round(Z_Squared*10000)/10000;
+    var result_chi = document.getElementById("result_chi");
+    result_chi.innerText = "P-value: " +  Math.round(compute(Z_Squared, 1)*10000)/10000;
+    var info = document.getElementById("info");
+    info.innerHTML = "P-value calculated based on the &Chi;<sup>2</sup> distribution with 1 degree of freedom";
+
+}
